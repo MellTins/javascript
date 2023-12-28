@@ -3,26 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desafio Nacionalidade</title>
+    <title>Exercicios aula 11</title>
+    <style>
+        body{
+            background-color: gainsboro;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1,p{
+            color: green;
+            background-color: black;
+            padding: 10px;
+            width: 400px;
+            text-align: center;
+        }
+        #país{
+            padding: 10px;
+            margin: 10px;
+            background-color: black;
+            border: 2px solid green;
+            color: aliceblue;
+        }
+        #area{
+            padding: 5px;
+            color: red;
+            border: 1px solid black;        }
+            #res{
+                font-weight: bold;
+            }
+    </style>
 </head>
 <body>
-    <h1>Descubra sua Naturalidade</h1>
-    <input type="text" name="txtnac" id="txtnac">
-    <input type="button" value="Descobrir" onclick="descobrir()">
-    <div id="nacionalidade">
+    <h1>Nacionalidade</h1>
+    <p>Nacionalidade:</p>
+    <input type="text" name="país" id="país">
+    <input type="button" value="Checar" id="area">
+    <div id="res">
 
     </div>
     <script>
-        function descobrir(){
-            var txtn = document.querySelector('input#txtnac')
-            var nacionalidade = document.querySelector('div#nacionalidade')
-            var nacao = txtn.value
-           if(txtn == 'brasil'){
-            nacionalidade.innerHTML = `<p>Seu país é ${nacao} e vc é <strong>Brasileira</strong></p>`
-           }else{
-            nacionalidade.innerHTML += `<p>Seus país é ${nacao} e vc é <strong>Estrangeiro</strong>(a)</p>`
-           }
-
+        var area = window.document.querySelector('input#area')
+        area.addEventListener('click',checar)
+       function checar(){
+         var país1 = window.document.querySelector('input#país')
+         var res = window.document.querySelector('div#res')
+         
+         var nacionalidade = país1.value
+         if (nacionalidade == 'brasil'){
+            res.innerHTML = 'Você é brasileiro'
+         }else{
+            res.innerHTML = 'Você é estrangeiro'
+         }
         }
+        
     </script>
+</body>
 </html>
