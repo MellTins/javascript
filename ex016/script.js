@@ -3,16 +3,17 @@
         var passo = window.document.getElementById('passo1')
         var res = window.document.getElementById('res')
        
-        function Salto(){
-          var c = Number(n1.value) //var c recebe o numero digitado no 1º input
-          var final = Number(fim.value) // var final recebe o numero digitado no 2º input
-          while(c <= final){
-            res.innerHTML += `${c}`;
-            c +=  Number(passo.value);
-          }
-           if(Number(c) == null){
-            res.innerHTML = 'Impossivel contar'
-           }
+    function Salto(){
+      var valorn1 = Number(n1.value) //pega o value de n1
+      var valorfim = Number(fim.value) //pega o value de fim
+      if(valorn1 == 0 || valorfim == 0 || passo==0){
+        res.innerHTML = 'Impossivel Contar!'
+      }else{
+        while(valorn1 <= valorfim){
+          res.innerHTML += `${valorn1} 👉🏼`
+          valorn1 += Number(passo.value) // aqui ele vai adicionando o numero de salto ate o numero determinado na var "valorfim"
         }
+      }
+    }
           
         
