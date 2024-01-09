@@ -17,9 +17,10 @@
        }
 
         if(valorn1 < valorfim)
+        //contagem crescente
         {for (let c = valorn1; c <= valorfim; c+= p) {
           res.innerHTML += `${c} \u{1F449}` // aqui ele vai adicionando o numero de salto ate o numero determinado na var "valorfim"
-          //contagem crescente
+          
         }
         
       }else {
